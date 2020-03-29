@@ -1,27 +1,43 @@
-import React from 'react';
-
-import { useNavigation, useRoute } from '@react-navigation/native';
-
-import { View, Image, Text, TouchableOpacity, FlatList } from 'react-native';
-
-import { Feather } from '@expo/vector-icons'
-
+import React, { useState } from 'react';
+import { View, TouchableOpacity, FlatList, Text, Button} from 'react-native';
 import styles from './styles';
+import ActionButton from 'react-native-action-button';
+import { TextInput } from 'react-native-gesture-handler';
+import { Feather } from '@expo/vector-icons';
+import { CheckBox } from 'react-native-elements'
 
-import * as MailComposer from 'expo-mail-composer';
+export default function TaskList() {
 
-import {Linking} from 'react-native';
+    function createTask() {
 
-
-export default function Detail() {
-
-
+    }
 
     return (
         <View style={styles.container}>
+           <FlatList
+           data={[1,2,3]}
+           renderItem={() =>(   
+           
+           <View style={styles.button}>
+                <CheckBox/>
+                 <TouchableOpacity 
+                 
+                 onPress={()=> {}}>
+                      <Text>
+                          Text Novamente
+                      </Text>
+                      
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                  <Feather name="trash" size={16} color="#E02041"></Feather>
+                  </TouchableOpacity>
+           </View>
+            )}
+           />
             
-            <Text>Teste!</Text>
+            <ActionButton buttonColor="rgba(231,76,60,1)" onPress={createTask}></ActionButton>
         </View>
 
+        
     );
 }

@@ -8,12 +8,19 @@ container: {
     flex: 1,
     paddingHorizontal: 24,
     paddingTop: Constants.statusBarHeight + 20,
-},
-addButton:{
     
-    position: 'absolute',
-    marginBottom: 0,
     
 },
+button: {
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    padding: 10,
+    borderRadius:8,
+    backgroundColor: '#FFF',
+    marginBottom:16,
+}
+
+
 
 });

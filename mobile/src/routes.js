@@ -12,9 +12,9 @@ import Detail from './pages/Detail';
 export default function Routes(){
     return(
             <NavigationContainer >
-                <AppStack.Navigator screenOptions={{headerShown:false}}>
-                    <AppStack.Screen name="TaskList" component={TaskList}/>
-                    <AppStack.Screen name="Detail" component={Detail}/>
+                <AppStack.Navigator screenOptions={{headerShown:true}}>
+                    <AppStack.Screen name="TaskList" options={{title: "Lista de tarefas"}} component={TaskList}/>
+                    <AppStack.Screen name="Detail" options={{title: "Tarefas"}} component={Detail}/>
                 </AppStack.Navigator>
             </NavigationContainer>
     );
