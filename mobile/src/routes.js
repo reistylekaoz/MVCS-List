@@ -9,11 +9,12 @@ import TaskList from './pages/TaskList';
 
 
 
+
 export default function Routes(){
     return(
             <NavigationContainer >
                 <AppStack.Navigator screenOptions={{headerShown:false}}>
-                    <AppStack.Screen name="TaskList" options={{title: "Lista de tarefas"}} component={TaskList}/>
+                    <AppStack.Screen name="TaskList" options={{title: "Lista de tarefas"}} component={TaskList}/>                   
                   </AppStack.Navigator>
             </NavigationContainer>
     );
