@@ -57,9 +57,8 @@ textInput:{
     alignSelf: 'stretch',
     color: '#fff',
     padding: 20,
-    paddingTop: 46,
+    paddingTop: 5,
     backgroundColor: '#C4C4C4',
-    borderTopWidth: 2,
     width: '75%',
     
     borderTopColor: '#ededed'
