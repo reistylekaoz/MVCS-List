@@ -10,6 +10,7 @@ export default function TaskList() {
     const [noteList, setNoteList] = useState([]);
     const [count, setCount] = useState(1);
 
+
     setValue = async (id, [lista]) => {
         try {
             await AsyncStorage.setItem(id.toString(), JSON.stringify(lista))
@@ -24,13 +25,35 @@ export default function TaskList() {
 
             const counter = value.length;
 
+            const obj = [];
+
+            let maxId = 0;
+
+
             for (var i = 0; i < counter; i++) {
                 const idfor = value[i];
                 const array = await AsyncStorage.getItem(idfor.toString());
-               
-                setNoteList([...noteList, JSON.parse(array)]);
-                
-            }
+
+                obj.push(JSON.parse(array));
+
+                if (maxId < idfor) {
+                    maxId = (parseInt(idfor));
+
+                } else {
+
+                };
+
+            };
+
+            setCount(maxId + 1);
+
+            setNoteList(obj);
+
+
+
+
+
+
 
         } catch (e) {
             // read error
@@ -70,7 +93,7 @@ export default function TaskList() {
     };
 
     return (
-        <Modal onShow={()=> {}}>
+        <Modal onShow={getValue}>
             <KeyboardAvoidingView
                 behavior={Platform.select({
                     ios: 'padding',
@@ -82,11 +105,7 @@ export default function TaskList() {
                 </View>
                 <ScrollView
                     style={styles.listContainer}>
-                    <TouchableOpacity onPress={getValue} >
-                        <Text>
-                            Teste
-                        </Text>
-                    </TouchableOpacity>
+
                     {notes}
                 </ScrollView>
                 <View style={styles.footer}>

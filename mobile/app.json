@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "MVCS List",
+    "name": "MVCSList",
     "slug": "mvcslist",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -24,7 +24,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mvcs.listadetarefas"
+    },
+    "android": {
+      "package": "com.mvcs.listadetarefas",
+      "versionCode": 1
     }
   }
 }
